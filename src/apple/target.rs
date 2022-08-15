@@ -135,6 +135,15 @@ impl<'a> TargetTrait<'a> for Target<'a> {
         TARGETS.get_or_init(|| {
             let mut targets = BTreeMap::new();
             targets.insert(
+                "Simulator",
+                Target {
+                    triple: "aarch64-apple-ios-sim",
+                    arch: "Simulator",
+                    alias: None,
+                    min_xcode_version: None,
+                },
+            );
+            targets.insert(
                 "aarch64",
                 Target {
                     triple: "aarch64-apple-ios",
